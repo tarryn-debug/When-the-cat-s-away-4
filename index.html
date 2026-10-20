@@ -28,25 +28,26 @@
       padding: 0;
     }
 
+    /* Page Container with Soft Background for Frame Drop Shadow */
     body {
       font-family: var(--font-main);
-      background-color: #ffffff !important;
+      background-color: #f8f9fa;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 0 !important;
-      margin: 0 !important;
+      padding: 1.5rem;
+      margin: 0;
     }
 
-    /* CONTAINER SETUP */
+    /* Outer Container with Rounded Corners & Soft Drop Shadow */
     .interactive-container {
       width: 100%;
       max-width: 1120px;
       aspect-ratio: 16 / 9;
       background: #ffffff;
-      border-radius: 0 !important;
-      box-shadow: none !important;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
     }
@@ -73,26 +74,25 @@
     }
 
     .cover-content {
-      max-width: 440px;
+      max-width: 460px;
       display: flex;
       flex-direction: column;
       gap: 2rem;
       z-index: 2;
     }
 
-    /* Title in Black with Fade-In Animation */
+    /* Title at Exactly 48px with Smooth Fade-In */
     .cover-title {
-      font-size: 2.75rem;
+      font-size: 48px;
       font-weight: 700;
       color: #000000;
-      line-height: 1.2;
+      line-height: 1.25;
       opacity: 0;
-      transform: translateY(12px);
-      animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      animation: fadeIn 0.7s ease-out forwards;
       animation-delay: 0.2s;
     }
 
-    /* Start Button Primary (#2E45B8) & Hover (#141F52) */
+    /* Start Button with Delayed Fade-In and Hover State */
     .btn-start {
       align-self: flex-start;
       background-color: #2E45B8;
@@ -107,9 +107,8 @@
       box-shadow: 0 2px 6px rgba(46, 69, 184, 0.25);
       transition: background-color 0.2s ease, transform 0.15s ease;
       opacity: 0;
-      transform: translateY(12px);
-      animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-      animation-delay: 0.5s;
+      animation: fadeIn 0.7s ease-out forwards;
+      animation-delay: 0.6s;
     }
 
     .btn-start:hover {
@@ -136,16 +135,10 @@
       display: block;
     }
 
-    /* Entrance Animation Keyframes */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Fade Keyframe Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     /* ========================================================= */
@@ -409,7 +402,7 @@
       .interactive-container { aspect-ratio: auto; min-height: 540px; }
       .view-cover { flex-direction: column-reverse; padding: 2.5rem 1.5rem 1.5rem; gap: 1.5rem; justify-content: center; }
       .cover-content { align-items: center; text-align: center; }
-      .cover-title { font-size: 1.85rem; }
+      .cover-title { font-size: 32px; }
       .btn-start { align-self: center; width: 100%; max-width: 200px; }
       .cover-illustration { width: 60%; }
       .spotlight-view { flex-direction: column-reverse; justify-content: center; padding: 1rem; gap: 1rem; }
@@ -422,7 +415,7 @@
 
   <div class="interactive-container" id="interactive-app">
 
-    <!-- SLIDE 1: COVER VIEW -->
+    <!-- COVER SLIDE -->
     <section class="view-cover" id="cover-view">
       <div class="cover-content">
         <h1 class="cover-title">When the cat's away</h1>
