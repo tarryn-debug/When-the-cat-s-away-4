@@ -81,7 +81,7 @@
       z-index: 2;
     }
 
-    /* Title at 48px, Black, Sliding Up from Bottom */
+    /* Title at 48px, Black, Slow 1.6s Slide Up */
     .cover-title {
       font-size: 48px;
       font-weight: 700;
@@ -89,11 +89,11 @@
       line-height: 1.25;
       opacity: 0;
       transform: translateY(24px);
-      animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: slideUpFade 1.6s cubic-bezier(0.25, 1, 0.4, 1) forwards;
       animation-delay: 0.2s;
     }
 
-    /* Start Button with 2-Count (2s) Delay and Color States */
+    /* Start Button with 2s Delay and 0.8s Fade In */
     .btn-start {
       align-self: flex-start;
       background-color: #2E45B8;
@@ -108,7 +108,7 @@
       box-shadow: 0 2px 6px rgba(46, 69, 184, 0.25);
       transition: background-color 0.2s ease, transform 0.15s ease;
       opacity: 0;
-      animation: fadeIn 0.6s ease-out forwards;
+      animation: fadeIn 0.8s ease-out forwards;
       animation-delay: 2s;
     }
 
