@@ -81,18 +81,19 @@
       z-index: 2;
     }
 
-    /* Title at Exactly 48px with Smooth Fade-In */
+    /* Title at 48px, Black, Sliding Up from Bottom */
     .cover-title {
       font-size: 48px;
       font-weight: 700;
       color: #000000;
       line-height: 1.25;
       opacity: 0;
-      animation: fadeIn 0.7s ease-out forwards;
+      transform: translateY(24px);
+      animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       animation-delay: 0.2s;
     }
 
-    /* Start Button with Delayed Fade-In and Hover State */
+    /* Start Button with 2-Count (2s) Delay and Color States */
     .btn-start {
       align-self: flex-start;
       background-color: #2E45B8;
@@ -107,8 +108,8 @@
       box-shadow: 0 2px 6px rgba(46, 69, 184, 0.25);
       transition: background-color 0.2s ease, transform 0.15s ease;
       opacity: 0;
-      animation: fadeIn 0.7s ease-out forwards;
-      animation-delay: 0.6s;
+      animation: fadeIn 0.6s ease-out forwards;
+      animation-delay: 2s;
     }
 
     .btn-start:hover {
@@ -135,10 +136,26 @@
       display: block;
     }
 
-    /* Fade Keyframe Animation */
+    /* Keyframes for Title Bottom-Up Motion */
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Keyframes for Button Fade In */
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     /* ========================================================= */
